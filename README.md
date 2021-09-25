@@ -14,6 +14,10 @@ Cryptographic operations (sha256 digest, AES encryption/decryption) can be enabl
 
 **Recommendations?** - Please use the issue tracker to suggest new features/improvements (or implement it yourself and submit a PR).
 
+## Dependencies
+
+- `ring`@`0.16.20` is required if `crypto` feature is enabled.
+
 ## Basic Usage
 
 ```rust
