@@ -1,14 +1,15 @@
 [package]
 name = "fsextra"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2018"
 authors = ["Michael Palmer <michaelpalmer53@gmail.com>"]
 repository = "https://github.com/isolated-/fsextra"
-description = "fsextra is a collection of methods designed to reduce the complexity of performing cryptographic operations on files and directories."
+description = "fsextra is a collection of extensions to simplify working with Unix-based filesystems. With support for cryptographic operations (encryption, hashing)"
 license = "MIT"
 keywords = ["filesystem", "unix", "cryptographic", "encryption"]
 categories = ["cryptography", "os"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+crypto = []
 
 [dependencies]
