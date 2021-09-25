@@ -3,6 +3,7 @@ rust:
   - stable
   - beta
   - nightly
+cache: cargo
 jobs:
   allow_failures:
     - rust: nightly
@@ -13,3 +14,4 @@ deploy:
   token: $CARGO_API_TOKEN
   on:
    tags: true
+   rust: stable
