@@ -3,10 +3,11 @@ use std::os::unix::fs::MetadataExt;
 
 pub const EXECUTABLE: u32 = 0o111;
 
+/// `MetadataExtended` provides extended behaviour for `std::fs::Metadata`
 pub trait MetadataExtended {
-    /// *Added in **v0.1.0***
+    /// *Added in **v0.1.0*** - Determines if file is executable using `mode()` and bitwise operator.
     ///
-    /// Determines if file is executable using `mode()` and bitwise operator.
+    /// - requires `std::os::unix::fs::MetadataExt`
     ///
     /// ## Arguments
     ///
