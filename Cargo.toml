@@ -2,6 +2,11 @@
 name = "fsextra"
 version = "0.0.0"
 edition = "2018"
+authors = ["Michael Palmer <michaelpalmer53@gmail.com>"]
+repository = "https://github.com/isolated-/fsextra"
+license = "MIT"
+keywords = ["filesystem", "unix", "cryptographic", "encryption"]
+categories = ["cryptography", "os"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
