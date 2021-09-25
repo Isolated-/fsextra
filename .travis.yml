@@ -8,6 +8,10 @@ jobs:
   allow_failures:
     - rust: nightly
   fast_finish: true
+scripts:
+  - cargo build --all-features
+  - cargo test --all-features
+  - cargo doc --all-features
 
 deploy:
   provider: cargo
