@@ -10,6 +10,10 @@ keywords = ["filesystem", "unix", "cryptographic", "encryption"]
 categories = ["cryptography", "os"]
 
 [features]
-crypto = []
+crypto = ["ring"]
 
 [dependencies]
+ring = { version = "0.16.20", optional = true }
+
+[dev-dependencies]
+hex = "0.4.0"
