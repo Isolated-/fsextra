@@ -3,13 +3,18 @@ rust:
   - stable
   - beta
   - nightly
+cache: cargo
 jobs:
   allow_failures:
     - rust: nightly
   fast_finish: true
+scripts:
+  - cargo build --all-features
+  - cargo test --all-features
 
 deploy:
   provider: cargo
   token: $CARGO_API_TOKEN
   on:
    tags: true
+   rust: stable
