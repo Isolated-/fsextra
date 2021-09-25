@@ -1,3 +1,5 @@
+pub mod extensions;
+
 #[cfg(test)]
 mod tests {
     #[test]
