@@ -7,3 +7,9 @@ jobs:
   allow_failures:
     - rust: nightly
   fast_finish: true
+
+deploy:
+  provider: cargo
+  token: $CARGO_API_TOKEN
+  on:
+   tags: true
