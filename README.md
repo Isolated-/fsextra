@@ -4,4 +4,6 @@
 
 - Version: `v0.0.0`
 
+[![Build Status](https://app.travis-ci.com/Isolated-/fsextra.svg?branch=main)](https://app.travis-ci.com/Isolated-/fsextra)
+
 Placeholder to test CI/CD
