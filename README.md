@@ -6,7 +6,16 @@
 
 [![Build Status](https://app.travis-ci.com/Isolated-/fsextra.svg?branch=master)](https://app.travis-ci.com/Isolated-/fsextra)
 
-## Links
+## Collections
+
+### Extensions
+
+#### Metadata
+
+`MetadataExtended` provides the following methods:
+
+- `is_executable()` - returning true if the file is a file (not directory) and mode() == executable (using bitwise operator).
+
+## Learn More
 
 - [Documentation](https://docs.rs/fsextra/0.1.0/fsextra/all.html)
-
