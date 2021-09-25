@@ -13,6 +13,23 @@ pub trait MetadataExtended {
     /// ## Returns
     ///
     /// - `bool` - returns false if file = directory.
+    ///
+    /// ## Examples
+    ///
+    /// ```rust
+    /// use std::fs::File;
+    /// use std::error::Error;
+    /// use fsextra::extensions::metadata::MetadataExtended;
+    ///
+    /// fn main() -> Result<(), Box<dyn Error>> {
+    ///     let file = File::open("test_data/executable")?;
+    ///     let metadata = file.metadata()?;
+    ///
+    ///     assert_eq!(metadata.is_executable(), true);
+    ///
+    ///     Ok(())
+    /// }
+    /// ```
     fn is_executable(&self) -> bool;
 }
 
