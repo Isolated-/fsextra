@@ -10,5 +10,9 @@ pub mod extensions;
 pub mod generics;
 
 #[cfg(feature = "crypto")]
-/// support for cryptographic operations (requires `crypto` features)
+/// A collection of cryptographic operations (enabled by `crypto` feature)
+///
+/// ## Dependencies
+///
+/// - This module is a wrapper around [`ring@0.16.20`](https://docs.rs/ring/0.16.20/ring/).
 pub mod crypto;
