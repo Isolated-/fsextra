@@ -11,6 +11,7 @@ categories = ["cryptography", "os"]
 
 [features]
 crypto = ["ring"]
+os = []
 
 [dependencies]
 ring = { version = "0.16.20", optional = true }

@@ -2,7 +2,7 @@
 ///
 /// ## Compatibility
 ///
-/// - Version `v0.3.0` is tested on Unix-based operating systems.
+/// - Version `v0.3.0` is tested on Unix-based and Windows operating systems.
 /// - Version `v0.2.0` is untested to work on any other system (although Rust may not complain).
 pub mod extensions;
 
@@ -17,5 +17,13 @@ pub mod generics;
 /// - This module is a wrapper around [`ring@0.16.20`](https://docs.rs/ring/0.16.20/ring/).
 pub mod crypto;
 
-/// A collection of platform-support implementations and utilities
+/// A collection of platform-support implementations and utilities.
+///
+/// The `os` feature is required before using this module.
+///
+/// ## Supported Platforms
+///
+/// - `win` - Windows
+/// - `unix` - Unix - not implemented (yet)
+#[cfg(feature = "os")]
 pub mod os;

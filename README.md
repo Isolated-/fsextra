@@ -6,7 +6,7 @@
 
 > `fsextra` is a collection of extensions to simplify working with Unix-based filesystems. This library will also support cryptographic operations on files and directories by enabling the `crypto` feature (`> v0.2.0`).
 
-- **Current Version**: `v0.3.0-alpha.1` ([Changelog])
+- **Current Version**: `v0.3.0` ([Changelog])
 
 ## Installation
 
@@ -40,8 +40,9 @@ fsextra = { version = "*", features = ["crypto"] }
 
 This library supports Unix-based operating systems and **is not tested** for other operating systems at this time (`v0.3.0`). Since `v0.3.0`, any OS-specific functionality is hidden behind `cfg` attributes. Since `v0.3.0-alpha.1`, updates are tested against Unix (linux) and Windows operating systems.
 
+- `v0.3.0` adds tested support for Windows platforms, adding `is_executable()` workaround.
 - `v0.3.0-alpha.1` (and later) tests against Windows operating systems.
-- `v0.3.0` (and later) introduces a new interface: `Digest`, requiring `DigestExt`, `Sha2` and `Sha5` to be moved to `legacy`. Code changes may be required when updating to `v0.3.0`.
+- `v0.3.0-alpha.0` (and later) introduces a new interface: `Digest`, requiring `DigestExt`, `Sha2` and `Sha5` to be moved to `legacy`. Code changes may be required when updating to `v0.3.0`.
 - `v0.2.0` (and earlier) *may* compile for other operating systems, however, this may lead to undefined results and/or failures.
 
 ## Basic Usage
