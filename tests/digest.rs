@@ -1,7 +1,7 @@
 mod common;
 
 #[cfg(feature = "crypto")]
-use fsextra::crypto::digest::{Digest, DigestAlgorithm, DigestExt};
+use fsextra::crypto::digest::{Digest, DigestAlgorithm};
 
 #[cfg(feature = "crypto")]
 use std::io::Write;
