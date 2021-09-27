@@ -12,8 +12,10 @@ jobs:
     - rust: nightly
   fast_finish: true
 scripts:
+  - cargo clean
   - cargo build --all-features
   - cargo test --all-features
+  - cargo bench --all-features
 
 deploy:
   provider: cargo
