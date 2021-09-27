@@ -4,6 +4,14 @@
         "expected": true
     },
     {
+        "path": "C:\\Documents\\Newsletters\\Summer2018.exe",
+        "expected": true
+    },
+    {
+        "path": "..\\Publications\\TravelBrochure.exe",
+        "expected": true
+    },
+    {
         "path": "C:\\Documents\\Newsletters\\Summer2018.pdf",
         "expected": false
     },
