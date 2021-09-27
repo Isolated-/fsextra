@@ -1,6 +1,6 @@
 [package]
 name = "fsextra"
-version = "0.3.0-alpha.0"
+version = "0.3.0-alpha.1"
 edition = "2018"
 authors = ["Michael Palmer <michaelpalmer53@gmail.com>"]
 repository = "https://github.com/isolated-/fsextra"
