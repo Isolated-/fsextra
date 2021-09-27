@@ -2,7 +2,7 @@ pub use std::fs::File;
 pub use std::io::{Read, Result, Write};
 
 #[cfg(feature = "crypto")]
-pub use crate::crypto::digest::{Digest, DigestAlgorithm, DigestExt};
+pub use crate::crypto::digest::{Digest, DigestAlgorithm};
 
 /// `FileExtended` provides extended behaviour for `std::fs::File`
 pub trait FileExtended {
