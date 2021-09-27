@@ -1,0 +1,22 @@
+[
+    {
+        "path": "test_data/test_01.txt",
+        "expected": false
+    },
+    {
+        "path": "test_data/dummy.pdf",
+        "expected": false
+    },
+    {
+        "path": "test_data/dummy_with_mod.pdf",
+        "expected": true
+    },
+    {
+        "path": "test_data/test_01.txt",
+        "expected": false
+    },
+    {
+        "path": "test_data/executable",
+        "expected": true
+    }
+]
