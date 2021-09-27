@@ -30,7 +30,7 @@ fsextra = { version = "*", features = ["crypto"] }
 
 ## Known Limitations
 
-- `MetadataExtended` and `FileExtended` (and implementations) are only tested/supported on Unix-based filesystems (although may work).
+- `is_executable()` (`MetadataExtended`) is only supported on Unix-based platforms.
 
 ## Dependencies
 
