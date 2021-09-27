@@ -3,10 +3,14 @@ rust:
   - stable
   - beta
   - nightly
+os:
+  - linux
+  - windows
 cache: cargo
 jobs:
   allow_failures:
     - rust: nightly
+    - os: windows
   fast_finish: true
 scripts:
   - cargo build --all-features
@@ -18,3 +22,4 @@ deploy:
   on:
    tags: true
    rust: stable
+   os: linux
