@@ -5,6 +5,15 @@
 
 All noteable changes made to the **public API** will be listed here.
 
+## Version: [v0.3.0-alpha.1] - (release) - 2021-09-27
+
+This version focuses on improving compilation on non-supported platforms (specifically Windows).
+
+### Added
+
+- (extensions) adds `unix` platform-specific attribute to imports.
+- (CI/CD) adds Windows `os` to Travis CI config.
+
 ## Version: [v0.3.0-alpha.0] - (released) - 2021-09-27
 
 This version focuses on bringing a consistent API to Rust developers implementing *some* of the guidelines [found here](https://rust-lang.github.io/api-guidelines/about.html). `v0.3.0-alpha.0` also adds integration testing of the Public API to prevent future updates breaking backward compatibility.
