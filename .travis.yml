@@ -10,7 +10,6 @@ cache: cargo
 jobs:
   allow_failures:
     - rust: nightly
-    - os: windows
   fast_finish: true
 scripts:
   - cargo build --all-features
