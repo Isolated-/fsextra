@@ -13,6 +13,12 @@ pub trait MetadataExtended {
     ///
     /// - This method is only available for Unix-based files systems.
     ///
+    /// ## Limitations
+    ///
+    /// This method will work on **any file** that's marked executable using `chmod +x path/to/file`.
+    /// This may mean that even files that are **not** executable returns true.
+    /// This is covered in integration tests, see `test_data/dummy_with_mod.pdf`.
+    ///
     /// ## Arguments
     ///
     /// - None
