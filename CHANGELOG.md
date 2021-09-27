@@ -6,9 +6,14 @@
 All noteable changes made to the **public API** will be listed here.
 
 
-## Version: (unreleased)
+## Version: `v0.3.0` (unreleased)
+
+This version focuses on improving multi-platform support, specifically focusing on including windows in the API.
 
 ### Added
+
+- (os) - adds windows support (`win`) for `is_executable` using file path and extension to determine if file is executable (is `.exe`).
+- (tests) - adds windows `is_executable` test and test vectors to integration tests.
 
 ### Removed
 
@@ -58,3 +63,4 @@ Version `v0.2.0` focuses on bringing support for calculating digests using `SHA-
 [v0.1.0]: https://docs.rs/fsextra/0.1.0/fsextra/
 [v0.2.0]: https://docs.rs/fsextra/0.2.0/fsextra/
 [v0.3.0-alpha.0]: https://docs.rs/fsextra/0.3.0-alpha.0/fsextra/
+[v0.3.0]: https://docs.rs/fsextra/0.3.0/fsextra/
