@@ -1,12 +1,12 @@
 [package]
 name = "fsextra"
-version = "0.3.0-alpha.1"
+version = "0.3.0"
 edition = "2018"
 authors = ["Michael Palmer <michaelpalmer53@gmail.com>"]
 repository = "https://github.com/isolated-/fsextra"
-description = "fsextra is a collection of extensions to simplify working with Unix-based filesystems. With support for cryptographic operations (encryption, hashing)"
+description = "fsextra is a collection of extensions to simplify working with Unix-based (and windows) filesystems. With support for cryptographic operations (encryption, hashing)"
 license = "MIT"
-keywords = ["filesystem", "unix", "cryptographic", "encryption"]
+keywords = ["filesystem", "unix", "windows", "cryptographic", "encryption"]
 categories = ["cryptography", "os"]
 
 [features]
