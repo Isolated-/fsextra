@@ -33,3 +33,18 @@ pub fn consume_os_win_exec_tests() -> Vec<OsWinExecutableTestFile> {
     let mut reader = BufReader::new(file);
     return serde_json::from_reader(&mut reader).unwrap();
 }
+
+#[cfg(unix)]
+#[derive(Serialize, Deserialize)]
+pub struct UnixExecutableTestFile {
+    pub path: String,
+    pub expected: bool,
+}
+
+#[cfg(unix)]
+#[allow(dead_code)]
+pub fn consume_unix_exec_tests() -> Vec<UnixExecutableTestFile> {
+    let file = std::fs::File::open("test_data/unix_executable_tests.json").unwrap();
+    let mut reader = BufReader::new(file);
+    return serde_json::from_reader(&mut reader).unwrap();
+}
