@@ -1,7 +1,6 @@
-#[cfg(feature = "crypto")]
+#[allow(unused_imports)]
 use serde::{Deserialize, Serialize};
-
-#[cfg(feature = "crypto")]
+#[allow(unused_imports)]
 use std::io::BufReader;
 
 #[cfg(feature = "crypto")]
@@ -13,8 +12,24 @@ pub struct DigestTestFile {
 }
 
 #[cfg(feature = "crypto")]
+#[allow(dead_code)]
 pub fn consume_digest_tests() -> Vec<DigestTestFile> {
     let file = std::fs::File::open("test_data/digest_tests.json").unwrap();
+    let mut reader = BufReader::new(file);
+    return serde_json::from_reader(&mut reader).unwrap();
+}
+
+#[cfg(windows)]
+#[derive(Serialize, Deserialize)]
+pub struct OsWinExecutableTestFile {
+    pub path: String,
+    pub expected: bool,
+}
+
+#[cfg(windows)]
+#[allow(dead_code)]
+pub fn consume_os_win_exec_tests() -> Vec<OsWinExecutableTestFile> {
+    let file = std::fs::File::open("test_data/oswin_executable_tests.json").unwrap();
     let mut reader = BufReader::new(file);
     return serde_json::from_reader(&mut reader).unwrap();
 }
