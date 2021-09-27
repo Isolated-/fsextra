@@ -16,3 +16,6 @@ pub mod generics;
 ///
 /// - This module is a wrapper around [`ring@0.16.20`](https://docs.rs/ring/0.16.20/ring/).
 pub mod crypto;
+
+/// A collection of platform-support implementations and utilities
+pub mod os;
