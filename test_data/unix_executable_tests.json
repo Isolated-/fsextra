@@ -1,22 +1,30 @@
 [
     {
-        "path": "test_data/test_01.txt",
+        "path": "test_data/files/test_01.txt",
         "expected": false
     },
     {
-        "path": "test_data/dummy.pdf",
+        "path": "test_data/files/dummy.pdf",
         "expected": false
     },
     {
-        "path": "test_data/dummy_with_mod.pdf",
+        "path": "test_data/files/dummy_with_mod.pdf",
         "expected": true
     },
     {
-        "path": "test_data/test_01.txt",
+        "path": "test_data/files/test_01.txt",
         "expected": false
     },
     {
-        "path": "test_data/executable",
+        "path": "test_data/files/executable",
         "expected": true
+    },
+    {
+        "path": "test_data",
+        "expected": false
+    },
+    {
+        "path": "test_data/files",
+        "expected": false
     }
 ]
