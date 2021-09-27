@@ -1,4 +1,5 @@
 #[cfg(test)]
+#[cfg(unix)]
 mod metadata_tests {
     use crate::extensions::metadata::MetadataExtended;
     use std::fs::File;

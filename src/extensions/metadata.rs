@@ -1,4 +1,6 @@
 use std::fs::Metadata;
+
+#[cfg(unix)]
 use std::os::unix::fs::MetadataExt;
 
 pub const EXECUTABLE: u32 = 0o111;
@@ -35,12 +37,13 @@ pub trait MetadataExtended {
     ///     Ok(())
     /// }
     /// ```
+    #[cfg(unix)]
     fn is_executable(&self) -> bool;
 }
 
 impl MetadataExtended for Metadata {
     #[cfg(unix)]
     fn is_executable(&self) -> bool {
-        return self.is_file() && self.mode() & EXECUTABLE != 0;
+        self.is_file() && self.mode() & EXECUTABLE != 0
     }
 }
