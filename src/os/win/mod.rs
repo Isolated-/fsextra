@@ -19,8 +19,8 @@ use std::path::Path;
 /// use fsextra::os::win::{is_executable};
 ///
 /// fn main() {
-///     assert_eq!(is_executable("text.txt", false);
-///     assert_eq!(is_executable("program.exe", true);
+///     assert_eq!(is_executable("text.txt"), false);
+///     assert_eq!(is_executable("program.exe"), true);
 /// }
 ///
 /// ```
