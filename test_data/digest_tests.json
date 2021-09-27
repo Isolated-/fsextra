@@ -1,0 +1,47 @@
+[
+    {
+        "plaintext": "",
+        "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "algorithm": "SHA256"
+    },
+    {
+        "plaintext": "",
+        "digest": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e",
+        "algorithm": "SHA512"
+    },
+    {
+        "plaintext": "",
+        "digest": "38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b",
+        "algorithm": "SHA384"
+    },
+    {
+        "plaintext": "38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b",
+        "digest": "f170a4803c7e3adec5dcaca121063864601c436f0135422acca1d33efb3aa4b9",
+        "algorithm": "SHA256"
+    },
+    {
+        "plaintext": "38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b",
+        "digest": "7e4a22bac84bf4653c27cf66fdbfc94b1f7aa38fda6777d60b2598ea5a353af6e6091bd1e1c789209548a4f1e16c0f55",
+        "algorithm": "SHA384"
+    },
+    {
+        "plaintext": "38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b",
+        "digest": "8b2197bbbf71049d6034864f5c51780e15fd70e55de5d9bcb01b2c736a32b120845b65ecdfc635e700cd97241bc1b18a61fa7fd64b661ed9ddb69f4024eee792",
+        "algorithm": "SHA512"
+    },
+    {
+        "plaintext": "hello world!",
+        "digest": "7509e5bda0c762d2bac7f90d758b5b2263fa01ccbc542ab5e3df163be08e6ca9",
+        "algorithm": "SHA256"
+    },
+    {
+        "plaintext": "hello world!",
+        "digest": "d33d40f7010ce34aa86efd353630309ed5c3d7ffac66d988825cf699f4803ccdf3f033230612f0945332fb580d8af805",
+        "algorithm": "SHA384"
+    },
+    {
+        "plaintext": "hello world!",
+        "digest": "db9b1cd3262dee37756a09b9064973589847caa8e53d31a9d142ea2701b1b28abd97838bb9a27068ba305dc8d04a45a1fcf079de54d607666996b3cc54f6b67c",
+        "algorithm": "SHA512"
+    }
+]
