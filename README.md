@@ -6,7 +6,7 @@
 
 > `fsextra` is a collection of extensions to simplify working with Unix-based filesystems. This library will also support cryptographic operations on files and directories by enabling the `crypto` feature (`> v0.2.0`).
 
-- **Current Version**: `v0.3.0-alpha.0` ([Changelog])
+- **Current Version**: `v0.3.0-alpha.1` ([Changelog])
 
 ## Installation
 
@@ -38,8 +38,9 @@ fsextra = { version = "*", features = ["crypto"] }
 
 ## Compatibility
 
-This library supports Unix-based operating systems and **is not tested** for other operating systems at this time (`v0.3.0`). Since `v0.3.0`, any OS-specific functionality is hidden behind `cfg` attributes.
+This library supports Unix-based operating systems and **is not tested** for other operating systems at this time (`v0.3.0`). Since `v0.3.0`, any OS-specific functionality is hidden behind `cfg` attributes. Since `v0.3.0-alpha.1`, updates are tested against Unix (linux) and Windows operating systems.
 
+- `v0.3.0-alpha.1` (and later) tests against Windows operating systems.
 - `v0.3.0` (and later) introduces a new interface: `Digest`, requiring `DigestExt`, `Sha2` and `Sha5` to be moved to `legacy`. Code changes may be required when updating to `v0.3.0`.
 - `v0.2.0` (and earlier) *may* compile for other operating systems, however, this may lead to undefined results and/or failures.
 
@@ -68,14 +69,24 @@ fn main() -> Result<()> {
 
 ## Testing
 
-This library can be tested using Cargo (as usual) with `cargo test`. It's recommended to test with *and* without `--all-features`.
+Cross targets:
+
+- `x86_64-pc-windows-gnu`
+- `x86_64-unknown-linux-gnu`
+- `arm-unknown-linux-gnueabi`
+
+This library can be tested using Cargo (as usual) with `cargo test`. It's recommended to test with *and* without `--all-features`. When local testing, it's recommended to use [Cross] to achieve testing for the targets listed above.
+
+To use [Cross] to test: `cross test --target {target} --all-features`.
 
 ## Learn More
 
 - [Documentation]
 - [Ring]
 - [Changelog]
+- [Cross]
 
 [Documentation]: https://docs.rs/fsextra/0.3.0/fsextra/index.html
 [Ring]: https://briansmith.org/rustdoc/ring/
 [Changelog]: https://github.com/Isolated-/fsextra/blob/next/CHANGELOG.md
+[Cross]: https://github.com/rust-embedded/cross
