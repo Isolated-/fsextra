@@ -7,7 +7,9 @@ pub const EXECUTABLE: u32 = 0o111;
 pub trait MetadataExtended {
     /// *Added in **v0.1.0*** - Determines if file is executable using `mode()` and bitwise operator.
     ///
-    /// - requires `std::os::unix::fs::MetadataExt`
+    /// ## Compatibility
+    ///
+    /// - This method is only available for Unix-based files systems.
     ///
     /// ## Arguments
     ///
@@ -37,6 +39,7 @@ pub trait MetadataExtended {
 }
 
 impl MetadataExtended for Metadata {
+    #[cfg(unix)]
     fn is_executable(&self) -> bool {
         return self.is_file() && self.mode() & EXECUTABLE != 0;
     }
