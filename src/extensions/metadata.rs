@@ -35,7 +35,7 @@ pub trait MetadataExtended {
     /// use fsextra::extensions::metadata::MetadataExtended;
     ///
     /// fn main() -> Result<(), Box<dyn Error>> {
-    ///     let file = File::open("test_data/executable")?;
+    ///     let file = File::open("test_data/files/executable")?;
     ///     let metadata = file.metadata()?;
     ///
     ///     assert_eq!(metadata.is_executable(), true);
