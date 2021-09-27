@@ -2,6 +2,7 @@ mod common;
 
 use fsextra::extensions::MetadataExtended;
 use std::fs::File;
+use std::io::ErrorKind;
 
 #[cfg(unix)]
 #[test]
@@ -10,10 +11,21 @@ fn is_executable_returns_expected_output_from_inputs() {
     let tests = common::consume_unix_exec_tests();
 
     for test in tests {
-        let file = File::open(&test.path).unwrap();
-        let metadata = file.metadata().unwrap();
+        match File::open(&test.path) {
+            Ok(f) => {
+                let metadata = f.metadata().unwrap();
 
-        assert_eq!(metadata.is_executable(), test.expected);
+                if let Ok(metadata) = f.metadata() {
+                    assert_eq!(metadata.is_executable(), test.expected);
+                } else {
+                    unreachable!();
+                }
+            }
+            Err(e) => {
+                // test if a file doesn't exist
+                assert_eq!(e.kind(), ErrorKind::NotFound);
+            }
+        }
     }
 }
 
@@ -23,7 +35,13 @@ fn metadata_is_executable_does_not_change_file() {
     let tests = common::consume_unix_exec_tests();
 
     for test in tests {
-        let file = File::open(&test.path).unwrap();
+        let file = File::open(&test.path);
+
+        if file.is_err() {
+            continue;
+        }
+
+        let file = file.unwrap();
         let metadata = file.metadata().unwrap();
 
         assert_eq!(metadata.is_executable(), test.expected);
