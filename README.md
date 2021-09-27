@@ -1,46 +1,19 @@
 # fsextra
 
+**Note:** this library has not been externally tested for security and usage is at **your own risk**.
+
+[![Build Status](https://app.travis-ci.com/Isolated-/fsextra.svg?branch=next)](https://app.travis-ci.com/Isolated-/fsextra)
+
 > `fsextra` is a collection of extensions to simplify working with Unix-based filesystems. This library will also support cryptographic operations on files and directories by enabling the `crypto` feature (`> v0.2.0`).
 
-- Version: **v0.2.0**
-
-[![Build Status](https://app.travis-ci.com/Isolated-/fsextra.svg?branch=master)](https://app.travis-ci.com/Isolated-/fsextra)
-
-## Introduction
-
-`fsextra` is a library for simplifying work with Unix-based filesystems. This library will grow over time and non-essential/niche features will be controlled using feature flags to prevent bloat and unneeded dependencies.
-
-Cryptographic operations (sha256 digest, AES encryption/decryption) can be enabled using the `crypto` feature flag.
-
-**Recommendations?** - Please use the issue tracker to suggest new features/improvements (or implement it yourself and submit a PR).
-
-## Dependencies
-
-- `ring`@`0.16.20` is required if `crypto` feature is enabled.
-
-## Basic Usage
-
-```rust
-use fsextra::extensions::MetadataExtended;
-use std::fs::File;
-use std::error::Error;
-
-fn main() -> Result<(), Box<dyn Error>> {
-    let file = File::open("path/to/executable")?;
-    let metadata = file.metadata()?;
-    assert_eq!(metadata.is_executable(), true);
-
-    Ok(())
-}
-```
+- **Current Version**: `v0.3.0-alpha.0` ([Changelog])
 
 ## Installation
 
-This package can be installed by adding `fsextra = "*"` to your `Cargo.toml` file.
-
-An example of your `Cargo.toml` may look something like:
+Install default features by updating your `Cargo.toml` file to include `fsextra = "*"`.
 
 ```toml
+# your Cargo.toml
 [package]
 name = "your-package"
 version = "0.1.0"
@@ -50,28 +23,59 @@ edition = "2018"
 
 [dependencies]
 fsextra = "*"
+
+# optionally enable `crypto` feature
+fsextra = { version = "*", features = ["crypto"] }
 ```
 
-## SemVer
+## Known Limitations
 
-This library uses Semantic Versioning ([SemVer]) where a MAJOR represents breaking API changes, MINOR represents backward compatiable changes and PATCH represents a patch/hotfix.
+- `MetadataExtended` and `FileExtended` (and implementations) are only tested/supported on Unix-based filesystems (although may work).
 
-## Collections
+## Dependencies
 
-### Extensions
+- This library requires `ring@0.16.20` if `crypto` feature is enabled.
 
-Added in `v0.1.0`, extensions cannot be disabled and main purpose of this library. Each extension provides additional methods on **existing types**. These types are imported **only** from `std`.
+## Compatibility
 
-#### Metadata
+This library supports Unix-based operating systems and **is not tested** for other operating systems at this time (`v0.3.0`). Since `v0.3.0`, any OS-specific functionality is hidden behind `cfg` attributes.
 
-`MetadataExtended` provides the following methods:
+- `v0.3.0` (and later) introduces a new interface: `Digest`, requiring `DigestExt`, `Sha2` and `Sha5` to be moved to `legacy`. Code changes may be required when updating to `v0.3.0`.
+- `v0.2.0` (and earlier) *may* compile for other operating systems, however, this may lead to undefined results and/or failures.
 
-- `is_executable()` - returning true if the file is a file (not directory) and mode() == executable (using bitwise operator).
+## Basic Usage
+
+For complete examples, please see our [Documentation].
+
+```rust
+use fsextra::extensions::{MetadataExtended, FileExtended};
+use fsextra::crypto::digest::{Digest, DigestAlgorithm};
+use std::fs::File;
+use std::io::{Write, Result};
+
+fn main() -> Result<()> {
+    let file = File::open("path/to/executable")?;
+    let metadata = file.metadata()?;
+    
+    if !metadata.is_executable() {
+        let digest = file.digest(DigestAlgorithm::Sha2);
+        assert_eq!(hex::encode(digest), "7509e5bda0c762d2bac7f90d758b5b2263fa01ccbc542ab5e3df163be08e6ca9");
+    }
+
+    Ok(())
+}
+```
+
+## Testing
+
+This library can be tested using Cargo (as usual) with `cargo test`. It's recommended to test with *and* without `--all-features`.
 
 ## Learn More
 
 - [Documentation]
-- [SemVer]
+- [Ring]
+- [Changelog]
 
-[Documentation]: https://docs.rs/fsextra/0.1.0/fsextra/all.html
-[SemVer]: https://semver.org/
+[Documentation]: https://docs.rs/fsextra/0.3.0/fsextra/index.html
+[Ring]: https://briansmith.org/rustdoc/ring/
+[Changelog]: https://github.com/Isolated-/fsextra/blob/next/CHANGELOG.md
