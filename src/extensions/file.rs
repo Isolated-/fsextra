@@ -1,14 +1,8 @@
 pub use std::fs::File;
-pub use std::io::{Read, Result};
+pub use std::io::{Read, Result, Write};
 
 #[cfg(feature = "crypto")]
-pub use crate::crypto::digest::{DigestAlgorithm, DigestExt};
-
-#[cfg(feature = "crypto")]
-pub use crate::crypto::digest::sha2::Sha2;
-
-#[cfg(feature = "crypto")]
-pub use crate::crypto::digest::sha5::Sha5;
+pub use crate::crypto::digest::{Digest, DigestAlgorithm, DigestExt};
 
 /// `FileExtended` provides extended behaviour for `std::fs::File`
 pub trait FileExtended {
@@ -34,7 +28,7 @@ pub trait FileExtended {
     ///
     /// fn main() -> Result<()> {
     ///     let mut file = File::open("test_data/test_01.txt")?;
-    ///     let digest = file.digest(DigestAlgorithm::Sha2)?;
+    ///     let digest = file.digest(DigestAlgorithm::Sha256)?;
     ///     
     ///     assert_eq!(hex::encode(digest), "7509e5bda0c762d2bac7f90d758b5b2263fa01ccbc542ab5e3df163be08e6ca9");
     ///     
@@ -52,9 +46,9 @@ impl FileExtended for File {
         let mut bytes = vec![0; len as usize];
         self.read_exact(&mut bytes)?;
 
-        match algorithm {
-            DigestAlgorithm::Sha2 => Sha2::new(&bytes).digest(),
-            DigestAlgorithm::Sha5 => Sha5::new(&bytes).digest(),
-        }
+        let mut digest = Digest::new(algorithm);
+        digest.write(&bytes)?;
+
+        Ok(digest.finish())
     }
 }
