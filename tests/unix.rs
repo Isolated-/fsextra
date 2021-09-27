@@ -13,8 +13,6 @@ fn is_executable_returns_expected_output_from_inputs() {
     for test in tests {
         match File::open(&test.path) {
             Ok(f) => {
-                let metadata = f.metadata().unwrap();
-
                 if let Ok(metadata) = f.metadata() {
                     assert_eq!(metadata.is_executable(), test.expected);
                 } else {
