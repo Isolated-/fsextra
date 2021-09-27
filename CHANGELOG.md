@@ -5,6 +5,15 @@
 
 All noteable changes made to the **public API** will be listed here.
 
+
+## Version: (unreleased)
+
+### Added
+
+### Removed
+
+- (CI/CD) removes `windows` from list of allowed failures.
+
 ## Version: [v0.3.0-alpha.1] - (release) - 2021-09-27
 
 This version focuses on improving compilation on non-supported platforms (specifically Windows).
