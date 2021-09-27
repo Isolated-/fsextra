@@ -27,7 +27,7 @@ pub trait FileExtended {
     /// use fsextra::extensions::file::*;
     ///
     /// fn main() -> Result<()> {
-    ///     let mut file = File::open("test_data/test_01.txt")?;
+    ///     let mut file = File::open("test_data/files/test_01.txt")?;
     ///     let digest = file.digest(DigestAlgorithm::Sha256)?;
     ///     
     ///     assert_eq!(hex::encode(digest), "7509e5bda0c762d2bac7f90d758b5b2263fa01ccbc542ab5e3df163be08e6ca9");
