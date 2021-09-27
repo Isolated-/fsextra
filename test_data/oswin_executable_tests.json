@@ -1,0 +1,30 @@
+[
+    {
+        "path": "executable.exe",
+        "expected": true
+    },
+    {
+        "path": "C:\\Documents\\Newsletters\\Summer2018.pdf",
+        "expected": false
+    },
+    {
+        "path": "2018\\January.xlsx",
+        "expected": false
+    },
+    {
+        "path": "..\\Publications\\TravelBrochure.pdf",
+        "expected": false
+    },
+    {
+        "path": "C:\\Projects\\apilibrary\\apilibrary.sln",
+        "expected": false
+    },
+    {
+        "path": "C:\\Projects\\noextension",
+        "expected": false
+    },
+    {
+        "path": "",
+        "expected": false
+    }
+]
