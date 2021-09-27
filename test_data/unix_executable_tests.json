@@ -26,5 +26,9 @@
     {
         "path": "test_data/files",
         "expected": false
+    },
+    {
+        "path": "",
+        "expected": false
     }
 ]
